@@ -11,6 +11,11 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
+      ensure_installed = {
+        "jdtls",
+        "gopls",
+        "clangd"
+      }
     },
   },
   {
@@ -35,8 +40,10 @@ return {
       lspconfig.jdtls.setup({
         capabilities = capabilities
       })
-
       lspconfig.clangd.setup({
+        capabilities = capabilities
+      })
+      lspconfig.gopls.setup({
         capabilities = capabilities
       })
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
