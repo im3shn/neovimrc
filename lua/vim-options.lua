@@ -47,3 +47,10 @@ vim.keymap.set("n", "<C-q>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww utility-session<CR>")
 
 vim.keymap.set("n", "<leader>er", ":lua vim.diagnostic.open_float(0, {scope='line'})<CR>")
+
+-- err!=nil in golang keymap
+vim.keymap.set(
+    "n",
+    "<leader>ee",
+    "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
+)
